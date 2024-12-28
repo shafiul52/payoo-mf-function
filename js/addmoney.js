@@ -3,7 +3,7 @@ document.getElementById('btn-add-money')
     event.preventDefault();
 
     const addmoney =document.getElementById('input-add-money').value;
-    
+    const addmoneynumber = parseFloat(addmoney);
     
      const pinNumber = document.getElementById('input-pin-number').value;
     
@@ -13,8 +13,11 @@ document.getElementById('btn-add-money')
      if(pinNumber === '1234'){
         const balance = document.getElementById('account-balance').innerText;
         const  balanceNumber = parseFloat(balance);
-        console.log(balance)
 
+
+        const newBalance  = balanceNumber +addmoneynumber;
+
+       document.getElementById('account-balance').innerText = newBalance;
      }
      else{
         alert('Failed to add Money ')
